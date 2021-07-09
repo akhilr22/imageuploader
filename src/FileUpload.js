@@ -7,7 +7,6 @@ function FileUpload(){
 
     const uploadImage = async e =>{
         const files= e.target.files
-        console.log(e)
         const data =new FormData()
         data.append('file',files[0])
         data.append('upload_preset','Akhilrmenon')
