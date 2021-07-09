@@ -1,6 +1,15 @@
 import React,{useState} from "react";
 import TopBarProgress from "react-topbar-progress-indicator";
 
+TopBarProgress.config({
+    barColors: {
+      "0": "red",
+      "1.0": "#fff"
+    },
+    shadowBlur: 5,
+    barThickness:10
+  });
+
 function FileUpload(){
     const[image,setImage]=useState('')
     const[loading,setLoading]=useState(false)
@@ -36,7 +45,7 @@ function FileUpload(){
             <TopBarProgress/>
                 
         ):(
-            <div ><img src={image} style={{width:'300px'}} alt="uploaded_img"/></div>
+            <div >{image && <img src={image} style={{width:'300px'}} alt="uploaded_img"/>}</div>
         )}
         </>
     )
